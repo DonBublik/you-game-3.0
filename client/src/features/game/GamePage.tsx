@@ -1,14 +1,27 @@
 import ThemeItem from './ThemeItem';
-import { useAppDispatch } from '../../redux/store';
+import { RootState, useAppDispatch } from '../../redux/store';
+import { Theme } from '../../redux/reducers/themeTypes';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const GamePage = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
-  const loadThemes =async (): Promise<void> => {
-    
-  }
+  const loadThemes = async (): Promise<void> => {
+    const res = await fetch('/api/themes');
+    const data: { themes: Theme[] } = (await res.json()) as { themes: Theme[] };
 
-  const themes = [];
+    dispatch({ type: 'themes/load', payload: data.themes });
+  };
+
+  const themes = useSelector((store: RootState) => store.themes.themes);
+  // console.log(themes);
+  
+
+  useEffect(() => {
+    loadThemes().catch(console.log);
+  }, []);
+
   return (
     <>
       <div className="game-main">GamePage</div>
