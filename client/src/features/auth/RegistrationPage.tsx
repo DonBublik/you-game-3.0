@@ -1,6 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const RegistrationPage = (): JSX.Element => {
+
+const [name, setName] = useState('')
+const [email, setEmail] = useState('')
+const [img, setImg] = useState('')
+const [password, setPassword] = useState('')
+const [rpassword, setRpassword] = useState('')
+
+const dispatch = useAppDispatch()
+
+const onHandleSubmit: React.FormEventHandler
+
   return (
     <>
       <div>RegistrationPage</div>
