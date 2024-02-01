@@ -1,6 +1,7 @@
 export type Theme = {
   id: number;
   name: string;
+  Question: [];
 };
 
 export type ThemesState = {

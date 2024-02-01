@@ -1,15 +1,9 @@
-import React from 'react';
+
+import { Theme } from '../../redux/reducers/themeTypes';
 
 const ThemeItem = ({ theme }: { theme: Theme }): JSX.Element => {
-  const questions = [];
   return (
-    <>
-    <div className="theme-container">{
-      questions.map((question) => (
-        //
-      ))
-    }</div>
-    </>
+    <div>{theme.id}</div>
     )
 };
 
