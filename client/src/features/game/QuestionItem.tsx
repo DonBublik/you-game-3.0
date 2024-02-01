@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Question } from '../../redux/reducers/themeTypes';
 
-const QuestionItem = (): JSX.Element => {
+const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
+  
+
   return (
     <>
-    <div>QuestionItem</div>
-    
+      <div>{question.text}</div>
     </>
-  )
-}
+  );
+};
 
-export default QuestionItem
+export default QuestionItem;

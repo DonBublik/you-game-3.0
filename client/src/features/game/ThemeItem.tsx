@@ -1,10 +1,15 @@
-
-import { Theme } from '../../redux/reducers/themeTypes';
+import { Question, Theme } from '../../redux/reducers/themeTypes';
+import QuestionItem from './QuestionItem';
 
 const ThemeItem = ({ theme }: { theme: Theme }): JSX.Element => {
   return (
-    <div>{theme.id}</div>
-    )
+    <div>
+      <div>{theme.name}</div>
+      {theme.Questions.map((question: Question) => (
+        <QuestionItem key={question.id} question={question} />
+      ))}
+    </div>
+  );
 };
 
 export default ThemeItem;
