@@ -1,6 +1,13 @@
 import ThemeItem from './ThemeItem';
+import { useAppDispatch } from '../../redux/store';
 
 const GamePage = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+
+  const loadThemes =async (): Promise<void> => {
+    
+  }
+
   const themes = [];
   return (
     <>
