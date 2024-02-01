@@ -12,11 +12,11 @@ function MainPage(): JSX.Element {
 
       <GamePage/>
 
-      <AuthorizationPage/>
-
+      {/* <AuthorizationPage/>
+      <p>
         Если юзера нет то тут будет вход и ссылка на регу, а если есть то
         переход в игру
-      </p>
+      </p> */}
 
     </div>
   );
