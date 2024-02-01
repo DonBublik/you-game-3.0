@@ -16,16 +16,18 @@ const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promi
     e.preventDefault()
     const res = await fetch('/api/auth/sign-up', {
         method: 'post',
-        headers: {'content-type':'application '},
+        headers: {'content-type':'application/json'},
         body: JSON.stringify({
             name,
             email,
             img,
             password,
             rpassword
-        })
+        }) 
     })
+    
     const data: { message: string; user: User } = await res.json() as {message: string; user: User}
+    console.log(data);
     dispatch({type: 'auth/sign-up', payload: data.user})
 }
   return (

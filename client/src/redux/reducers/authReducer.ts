@@ -14,12 +14,12 @@ const initState: AuthState = {
     auth: undefined
 }
 
-export type Action = 
+export type Actions = 
 | { type: 'auth/sign-up'; payload: User }
 | { type: 'auth/sign-in'; payload: User }
 | { type: 'auth/logout' };
 
-export const authReducer = (state: AuthState = initState, action: Action): AuthState => {
+export const authReducer = (state: AuthState = initState, action: Actions): AuthState => {
     switch (action.type) {
         case 'auth/sign-up':
             return {
