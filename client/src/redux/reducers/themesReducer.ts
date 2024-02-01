@@ -1,8 +1,9 @@
 import { Action, ThemesState } from './themeTypes';
 
 const initState: ThemesState = {
-  themes: [],
-};
+
+  themes: []
+}
 
 export const themesReducer = (
   state: ThemesState = initState,

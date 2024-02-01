@@ -38,10 +38,10 @@ router.post('/sign-in', async (req, res) => {
 });
 
 router.post('/sign-up', async (req, res) => {
+  console.log(req.body);
   let user;
   try {
     const {email, name, img, password, rpassword } = req.body;
-
     if (password !== rpassword) {
       res.json({ message: 'Пароли не совпадают!' });
       return;
