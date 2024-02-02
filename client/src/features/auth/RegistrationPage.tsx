@@ -32,7 +32,6 @@ const RegistrationPage = (): JSX.Element => {
       message: string;
       user: User;
     };
-    console.log(data);
     dispatch({ type: 'auth/sign-up', payload: data.user });
   };
   return (

@@ -11,7 +11,7 @@ function MainPage(): JSX.Element {
     <div>
       <h2>Main Page</h2>
 
-      {/* <GamePage/> */}
+      <GamePage/>
 
      <RegistrationPage/>
       <AuthorizationPage/> 
