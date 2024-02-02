@@ -4,8 +4,12 @@ import React from 'react';
 
 import AuthorizationPage from '../auth/AuthorizationPage';
 import RegistrationPage from '../auth/RegistrationPage';
+
+import { Link } from 'react-router-dom';
+
 import { useAppDispatch } from '../../redux/store';
 import { NavLink, useNavigate } from 'react-router-dom';
+
 
 
 function MainPage(): JSX.Element {
@@ -29,6 +33,7 @@ const handleLogout = async (): Promise<void> => {
 
       {/* <GamePage/> */}
 
+
      <RegistrationPage/>
       <AuthorizationPage/> 
 
@@ -43,6 +48,9 @@ const handleLogout = async (): Promise<void> => {
         переход в игру
       </p> 
 
+      <p>
+        Войдите, либо <Link to='/sign-up'>зарегистрируйтесь</Link>
+      </p>
     </div>
   );
 }

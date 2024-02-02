@@ -1,7 +1,6 @@
 import { Action, ThemesState } from './themeTypes';
 
 const initState: ThemesState = {
-
   themes: []
 }
 
