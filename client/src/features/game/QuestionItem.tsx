@@ -37,8 +37,8 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
     })
     const data: {question: Question} = await( res.json())as {question:Question}
     dispatch({type: 'questions/update', payload: data.question})
-    setTimeout(() => setModuleView(false), 7000);
-    setTimeout(() => setAnswer(''), 7000);
+    setTimeout(() => setModuleView(false), 5000);
+    setTimeout(() => setAnswer(''), 5000);
     
   }
   return (
@@ -53,7 +53,9 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
     {moduleView&&(
       <div className="question-module">
             <form onSubmit={questionModuleSubmit} >
+            <div className='question-name'>
             {question.text}
+            </div>
             <input value={answer} onChange={(e)=> setAnswer(e.target.value)} type='text' placeholder="Ваш ответ"/>
             {answerTrue &&(
               <>
