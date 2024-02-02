@@ -17,7 +17,7 @@ function App(): JSX.Element {
   const checkUser = async (): Promise<void> => {
     const res = await fetch('api/auth/check');
     const data: { user: User } = (await res.json()) as { user: User };
-    dispatch({ type: 'auth/logout', payload: data.user });
+    dispatch({ type: 'auth/sign-in', payload: data.user });
   };
 //  const userResult = useSelector((store:RootState) => store.auth.auth?.max_result)
 

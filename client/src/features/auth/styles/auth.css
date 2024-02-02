@@ -1,3 +1,7 @@
+.error {
+  font-size: 20px;
+  color: red;
+}
 .signup-form {
   display: flex;
   justify-content: center;

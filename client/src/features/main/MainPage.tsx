@@ -9,9 +9,7 @@ import { Link } from 'react-router-dom';
 function MainPage(): JSX.Element {
   return (
     <div className='container'>
-      <h2>Main Page</h2>
       <AuthorizationPage />
-
       <p>
         Войдите, либо <Link to="/sign-up">зарегистрируйтесь</Link>
       </p>
