@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './styles/auth.css';
 import { User } from '../../redux/reducers/authReducer';
 import { useAppDispatch } from '../../redux/store';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationPage = (): JSX.Element => {
   const [name, setName] = useState('');
@@ -11,6 +12,8 @@ const RegistrationPage = (): JSX.Element => {
   const [rpassword, setRpassword] = useState('');
 
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate()
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     e
@@ -34,6 +37,7 @@ const RegistrationPage = (): JSX.Element => {
     };
     console.log(data);
     dispatch({ type: 'auth/sign-up', payload: data.user });
+    navigate('/game')
   };
   return (
     <>
@@ -49,7 +53,7 @@ const RegistrationPage = (): JSX.Element => {
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            type='text'
+            type='email'
             placeholder='email'
           />
           <input
@@ -61,13 +65,13 @@ const RegistrationPage = (): JSX.Element => {
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type='text'
+            type='password'
             placeholder='пароль'
           />
           <input
             value={rpassword}
             onChange={(e) => setRpassword(e.target.value)}
-            type='text'
+            type='password'
             placeholder='повторите пароль'
           />
           <button type='submit'>Зарегистрироваться</button>

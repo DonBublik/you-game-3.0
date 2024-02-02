@@ -4,7 +4,7 @@ import GamePage from '../game/GamePage';
 
 import AuthorizationPage from '../auth/AuthorizationPage';
 import RegistrationPage from '../auth/RegistrationPage';
-
+import { Link } from 'react-router-dom';
 
 function MainPage(): JSX.Element {
   return (
@@ -13,14 +13,12 @@ function MainPage(): JSX.Element {
 
       {/* <GamePage/> */}
 
-     <RegistrationPage/>
-      <AuthorizationPage/> 
+      {/* <RegistrationPage /> */}
+      <AuthorizationPage />
 
-        <p>Если юзера нет то тут будет вход и ссылка на регу, а если есть то
-
-        переход в игру
-      </p> 
-
+      <p>
+        Войдите, либо <Link to='/sign-up'>зарегистрируйтесь</Link>
+      </p>
     </div>
   );
 }
