@@ -32,7 +32,7 @@ const NavBar = (): JSX.Element => {
     <>
       <ul className="navbar_main">
         {newUser && (
-          <li>
+          <li className='user'>
             Привет, {newUser.name}. Ваш текущий счет {newUser.max_result}
           </li>
         )}

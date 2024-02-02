@@ -21,10 +21,9 @@
 .App-body {
   padding: 2rem;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
 }
-
 
 a {
   font-weight: 500;
@@ -53,7 +52,7 @@ button {
   height: 70px;
   color: #f9f9f9;
   background-color: #1d1f7c;
-  
+
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -71,18 +70,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /**/
-.question-container{
+.question-container {
   display: flex;
 }
 
 .question-module {
+  padding: 10px;
   position: absolute;
   background-color: #0e008ae3;
-  width: 800px;
-  height: 600px;
+  min-width: 100%;
+  min-height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -91,42 +95,65 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
+.question-module form {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+}
+
 .question-module input {
   background-color: #b3b3e7;
   font-size: 20px;
+  border-style: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 .question-module input::placeholder {
-  color: #727272; 
-  font-style:italic 
+  color: #727272;
+  font-style: italic;
 }
-.question-name{
-  margin-top: -200px;
-  font-size: 80px;
+
+img {
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 20px;
+}
+
+.question-name {
+  font-size: 64px;
+  -webkit-text-stroke: 2px black;
 }
 .answer-true {
   color: rgb(3, 219, 3);
-  font-size: 100px;
-  margin-bottom: -300px;
+  font-size: 70px;
 }
 .answer-false {
   color: rgb(214, 0, 0);
-  font-size: 100px;
-  margin-bottom: -300px;
+  font-size: 70px;
 }
 
 .question-btn {
-  
+
 }
-.theme-name{
+.theme-name {
+  border-right: 3px solid rgba(255, 255, 255, 0.371);
   width: 150px;
   height: 70px;
   color: #f9f9f9;
   background-color: #1d1f7c;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  text-align: center;
+}
 
-  
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    display: inline-block;
-    text-align: center;
+.game-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -21,6 +21,12 @@ function TopPage(): JSX.Element {
 
   const users = useSelector((store: RootState) => store.users.users);
 
+  const user = useSelector((store: RootState) => store.auth.auth);
+  user && localStorage.setItem('user', JSON.stringify(user));
+
+  const storedUser: string = localStorage.getItem('user') as string;
+  const newUser: User = JSON.parse(storedUser);
+
   return (
     <div className="container">
       <h2>Лучшие игроки:</h2>
@@ -32,9 +38,12 @@ function TopPage(): JSX.Element {
           </div>
         );
       })}
-      <p>
+      {!newUser&& (
+        <p>
         <Link to="/">Ко входу</Link>
       </p>
+      )}
+      
     </div>
   );
 }

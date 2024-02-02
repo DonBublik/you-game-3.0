@@ -16,19 +16,17 @@ const GamePage = (): JSX.Element => {
 
   const themes = useSelector((store: RootState) => store.themes.themes);
 
-
   useEffect(() => {
     loadThemes().catch(console.log);
   }, [themes]);
 
   return (
     <>
-      <div className="game-main">GamePage</div>
-      
-      {themes.map((theme) => (
-        <ThemeItem key={theme.id} theme={theme} />
-      ))}
-      
+      <div className="game-main">
+        {themes.map((theme) => (
+          <ThemeItem key={theme.id} theme={theme} />
+        ))}
+      </div>
     </>
   );
 };

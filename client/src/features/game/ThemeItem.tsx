@@ -5,7 +5,7 @@ const ThemeItem = ({ theme }: { theme: Theme }): JSX.Element => {
   return (
     <div>
       <div className='question-container'>
-      <div className='theme-name'>{theme.name}</div>
+      <div className='theme-name'><p>{theme.name}</p></div>
       {theme.Questions.map((question: Question) => (
         <QuestionItem key={question.id} question={question} />
       ))}
