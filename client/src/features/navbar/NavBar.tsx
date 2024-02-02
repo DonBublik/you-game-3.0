@@ -9,11 +9,12 @@ import { User } from '../../redux/reducers/authReducer';
 
 const NavBar = (): JSX.Element => {
   const user = useSelector((store: RootState) => store.auth.auth);
-  console.log(user, 'наш юзер');
+
   user && localStorage.setItem('user', JSON.stringify(user));
 
   const storedUser: string = localStorage.getItem('user') as string;
   const newUser: User = JSON.parse(storedUser);
+
 
   const dispatch = useAppDispatch();
 
@@ -31,10 +32,12 @@ const NavBar = (): JSX.Element => {
   return (
     <>
       <ul className="navbar_main">
-        {newUser && <li>Привет, {newUser.name}</li>}
+
+        {newUser && <li>Привет, {newUser.name}. Ваш текущий счет {newUser.max_result}</li>}
+
         <li>
-          <NavLink className={'navlink'} to="/">
-            Главная
+          <NavLink className={'navlink'} to="/game">
+            Игра
           </NavLink>
         </li>
         {!user && (

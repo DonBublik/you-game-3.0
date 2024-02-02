@@ -4,9 +4,10 @@ import './App.css';
 import MainPage from './features/main/MainPage';
 import GamePage from './features/game/GamePage';
 import type { User } from './redux/reducers/authReducer';
-import { useAppDispatch } from './redux/store';
+import { RootState, store, useAppDispatch } from './redux/store';
 import NavBar from './features/navbar/NavBar';
 import RegistrationPage from './features/auth/RegistrationPage';
+import { useSelector } from 'react-redux';
 
 function App(): JSX.Element {
 
@@ -18,6 +19,7 @@ function App(): JSX.Element {
     const data: { user: User } = (await res.json()) as { user: User };
     dispatch({ type: 'auth/logout', payload: data.user });
   };
+//  const userResult = useSelector((store:RootState) => store.auth.auth?.max_result)
 
   useEffect(() => {
     checkUser().catch(console.log);
