@@ -19,6 +19,17 @@ const RegistrationPage = (): JSX.Element => {
     e
   ): Promise<void> => {
     e.preventDefault();
+
+    if (!email || !password || !name || !password || !rpassword) {
+      alert('Не все поля заполнены!');
+      return;
+    }
+
+    if (password !== rpassword) {
+      alert('Пароли не совпадают!');
+      return;
+    }
+
     const res = await fetch('/api/auth/sign-up', {
       method: 'post',
       headers: { 'content-type': 'application/json' },
@@ -40,7 +51,7 @@ const RegistrationPage = (): JSX.Element => {
   };
   return (
     <>
-      <div className="signup-form">
+      <div className='signup-form'>
         <form onSubmit={onHandleSubmit}>
           <input
             value={name}
