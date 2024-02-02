@@ -13,14 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  padding: 0;
-  margin: 0;
-}
-
 .App {
   padding: 0;
-  width: 100vh;
+  width: 100vw;
 }
 .App-body {
   padding: 2rem;

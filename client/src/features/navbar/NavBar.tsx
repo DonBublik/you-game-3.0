@@ -5,10 +5,16 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './styles/navbar.css';
 import { RootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
+import { User } from '../../redux/reducers/authReducer';
 
 const NavBar = (): JSX.Element => {
   const user = useSelector((store: RootState) => store.auth.auth);
-  
+
+  user && localStorage.setItem('user', JSON.stringify(user));
+
+  const storedUser: string = localStorage.getItem('user') as string;
+  const newUser: User = JSON.parse(storedUser);
+
 
   const dispatch = useAppDispatch();
 
@@ -20,23 +26,28 @@ const NavBar = (): JSX.Element => {
     if (data.message === 'success') {
       dispatch({ type: 'auth/logout' });
       navigate('/');
+      localStorage.removeItem('user');
     }
   };
   return (
     <>
       <ul className="navbar_main">
-        {user && <li>Привет, {user.name} Ваш текущий счет {user.max_result}</li>}
+
+        {newUser && <li>Привет, {newUser.name}. Ваш текущий счет {newUser.max_result}</li>}
+
         <li>
           <NavLink className={'navlink'} to="/game">
             Игра
           </NavLink>
         </li>
-        {!user && <li>
-          <NavLink className={'navlink'} to="/sign-up">
-            Зарегистрироваться
-          </NavLink>
-        </li>}
-        
+        {!user && (
+          <li>
+            <NavLink className={'navlink'} to="/sign-up">
+              Зарегистрироваться
+            </NavLink>
+          </li>
+        )}
+
         <li onClick={handleLogout}>
           <NavLink to="/">Выйти</NavLink>
         </li>
