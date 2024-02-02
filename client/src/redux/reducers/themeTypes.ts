@@ -5,6 +5,7 @@ export type Theme = {
 };
 
 export type Question = {
+  Games: any;
   id: number;
   text: string;
   theme_id: number;
@@ -13,8 +14,16 @@ export type Question = {
   img: string;
 };
 
+export type Games = {
+  id:number,
+  question_id:number,
+  user_id:number
+}
+
 export type ThemesState = {
   themes: Theme[];
 };
-
-export type Action = { type: 'themes/load'; payload: Theme[] };
+export type QuestionState = {
+  questions: Question[]
+}
+export type Action = { type: 'themes/load'; payload: Theme[] } | { type: 'questions/update'; payload: Question[] }

@@ -11,6 +11,7 @@ function MainPage(): JSX.Element {
     <div className='container'>
       <h2>Main Page</h2>
       <AuthorizationPage />
+
       <p>
         Войдите, либо <Link to="/sign-up">зарегистрируйтесь</Link>
       </p>
