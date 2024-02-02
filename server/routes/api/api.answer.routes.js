@@ -9,8 +9,11 @@ router.post('/', async (req, res) => {
         console.log(id);
         const game = await Game.create({ user_id:res.locals.user.id, question_id:id});
         const user  = await User.findOne({where: {id:res.locals.user.id}})
-        const newScore = user.max_result+score
-      const updateUser = await User.update({max_result:newScore},{where: {id:res.locals.user.id}})
+        if (score>0) {
+          const newScore = user.max_result+score
+          const updateUser = await User.update({max_result:newScore},{where: {id:res.locals.user.id}})
+        }
+        
       const question  = await Question.findOne({where: {id:id}, include: Game})
       
      
