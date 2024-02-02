@@ -1,33 +1,33 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      'Themes',
+      "Themes",
       [
         {
-          name: 'Тема 1',
+          name: "Мемы",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: 'Тема 2',
+          name: "Компьютерные игры",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: 'Тема 3',
+          name: "Фильмы",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: 'Тема 4',
+          name: "Музыкальные альбомы",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: 'Тема 5',
+          name: "Разное",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -36,7 +36,7 @@ module.exports = {
     );
   },
 
-  async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Themes', null, {});
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete("Themes", null, {});
+  },
 };
