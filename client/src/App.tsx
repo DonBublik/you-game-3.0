@@ -7,7 +7,7 @@ import type { User } from './redux/reducers/authReducer';
 import { useAppDispatch } from './redux/store';
 
 function App(): JSX.Element {
-
+  
   const dispatch = useAppDispatch()
 
   const checkUser = async (): Promise<void> => {
