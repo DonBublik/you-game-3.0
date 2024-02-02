@@ -5,11 +5,12 @@ const ThemeItem = ({ theme }: { theme: Theme }): JSX.Element => {
   const sortedQuestions = theme.Questions.sort((a, b) => a.score - b.score);
   return (
     <div>
-      <div className="question-container">
-        <div className="theme-name">{theme.name}</div>
-        {theme.Questions.map((question: Question) => (
-          <QuestionItem key={question.id} question={question} />
-        ))}
+      <div className='question-container'>
+      <div className='theme-name'><p>{theme.name}</p></div>
+      {theme.Questions.map((question: Question) => (
+        <QuestionItem key={question.id} question={question} />
+      ))}
+
       </div>
     </div>
   );
