@@ -21,16 +21,20 @@ const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promi
     })
     const data: {message: string; user: User}= await res.json() as {message: string; user: User}
     dispatch({type: 'auth/sign-in', payload: data.user})
+    setEmail('')
+    setPassword('')
 }
 
   return (
     <>
       <div>AuthorizationPage</div>
+      <div className='signin-form'>
       <form onSubmit={onHandleSubmit}>
         <input value={email} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='email' />
         <input value={password} onChange={(e) => setPassword(e.target.value)} type='text' placeholder='пароль' />
         <button type='submit'>Войти</button>
       </form>
+      </div>
     </>
   );
 };
