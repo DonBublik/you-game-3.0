@@ -7,6 +7,7 @@ export const store = createStore(
   combineReducers({
     themes: themesReducer,
     auth: authReducer,
+    users: authReducer
   })
 );
 

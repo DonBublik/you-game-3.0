@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { User } from '../../redux/reducers/authReducer';
 import { useAppDispatch } from '../../redux/store';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AuthorizationPage = (): JSX.Element => {
   const [email, setEmail] = useState('');
@@ -55,25 +55,34 @@ const AuthorizationPage = (): JSX.Element => {
 
   return (
     <>
+
       {errors.email && <span className='error'>{errors.email}</span>}
       {errors.password && <span className='error'>{errors.password}</span>}
       <div className='signin-form'>
+
         <form onSubmit={onHandleSubmit}>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+
             type='text'
             placeholder='email'
+
           />
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type='password'
-            placeholder='пароль'
+
+            type="password"
+            placeholder="пароль"
           />
-          <button type='submit'>Войти</button>
+          <button type="submit">Войти</button>
+
         </form>
       </div>
+      <p>
+        Войдите, либо <Link to="/sign-up">зарегистрируйтесь</Link>
+      </p>
     </>
   );
 };

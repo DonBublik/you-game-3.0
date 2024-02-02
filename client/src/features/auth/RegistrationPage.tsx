@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './styles/auth.css';
 import { User } from '../../redux/reducers/authReducer';
 import { useAppDispatch } from '../../redux/store';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegistrationPage = (): JSX.Element => {
   const [name, setName] = useState('');
@@ -13,7 +13,7 @@ const RegistrationPage = (): JSX.Element => {
 
   const dispatch = useAppDispatch();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (
     e
@@ -47,7 +47,7 @@ const RegistrationPage = (): JSX.Element => {
       user: User;
     };
     dispatch({ type: 'auth/sign-up', payload: data.user });
-    navigate('/game')
+    navigate('/game');
   };
   return (
     <>
@@ -56,36 +56,39 @@ const RegistrationPage = (): JSX.Element => {
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
-            type='text'
-            placeholder='имя'
+            type="text"
+            placeholder="имя"
           />
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            type='email'
-            placeholder='email'
+            type="email"
+            placeholder="email"
           />
           <input
             value={img}
             onChange={(e) => setImg(e.target.value)}
-            type='text'
-            placeholder='фото'
+            type="text"
+            placeholder="фото"
           />
           <input
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type='password'
-            placeholder='пароль'
+            type="password"
+            placeholder="пароль"
           />
           <input
             value={rpassword}
             onChange={(e) => setRpassword(e.target.value)}
-            type='password'
-            placeholder='повторите пароль'
+            type="password"
+            placeholder="повторите пароль"
           />
-          <button type='submit'>Зарегистрироваться</button>
+          <button type="submit">Зарегистрироваться</button>
         </form>
       </div>
+      <p>
+        Зарегистрируйтесь, либо <Link to="/">войдите</Link>
+      </p>
     </>
   );
 };

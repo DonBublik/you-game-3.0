@@ -15,7 +15,6 @@ const NavBar = (): JSX.Element => {
   const storedUser: string = localStorage.getItem('user') as string;
   const newUser: User = JSON.parse(storedUser);
 
-
   const dispatch = useAppDispatch();
 
   const navigate = useNavigate();
@@ -32,25 +31,29 @@ const NavBar = (): JSX.Element => {
   return (
     <>
       <ul className="navbar_main">
-
-        {newUser && <li>Привет, {newUser.name}. Ваш текущий счет {newUser.max_result}</li>}
-
-        <li>
-          <NavLink className={'navlink'} to="/game">
-            Игра
-          </NavLink>
-        </li>
-        {!user && (
+        {newUser && (
           <li>
-            <NavLink className={'navlink'} to="/sign-up">
-              Зарегистрироваться
+            Привет, {newUser.name}. Ваш текущий счет {newUser.max_result}
+          </li>
+        )}
+
+        <NavLink className={'navlink'} to="/top">
+          Топ
+        </NavLink>
+
+        {user && (
+          <li>
+            <NavLink className={'navlink'} to="/game">
+              Игра
             </NavLink>
           </li>
         )}
 
-        <li onClick={handleLogout}>
-          <NavLink to="/">Выйти</NavLink>
-        </li>
+        {user && (
+          <li onClick={handleLogout}>
+            <NavLink to="/">Выйти</NavLink>
+          </li>
+        )}
       </ul>
     </>
   );
