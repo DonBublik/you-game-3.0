@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import GamePage from '../game/GamePage';
+import GamePage from '../game/GamePage';
 
 import AuthorizationPage from '../auth/AuthorizationPage';
 

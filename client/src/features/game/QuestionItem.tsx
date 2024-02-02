@@ -15,14 +15,15 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
 
   const questionModuleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promise<void> => {
     e.preventDefault()
-    const {id} = question
+    const {id, score} = question
     const res = await fetch('/api/answers', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
       },
       body: JSON.stringify({
-        id
+        id,
+        score
       })
     })
     const data: {question: Question} = await( res.json())as {question:Question}
