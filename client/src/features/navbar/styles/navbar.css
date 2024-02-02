@@ -1,0 +1,17 @@
+.navbar_main {
+  display: flex;
+  list-style: none;
+  position: fixed;
+  top: 0;
+
+  background-color: rgb(201, 201, 213);
+  width: 100%;
+
+  margin: 0;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.navlink {
+  margin: 5px 20px;
+}

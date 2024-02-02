@@ -15,7 +15,7 @@ const GamePage = (): JSX.Element => {
   };
 
   const themes = useSelector((store: RootState) => store.themes.themes);
-  
+
 
   useEffect(() => {
     loadThemes().catch(console.log);
