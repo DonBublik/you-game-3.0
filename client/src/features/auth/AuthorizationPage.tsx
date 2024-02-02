@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import type { User } from '../../redux/reducers/authReducer';
 import { useAppDispatch } from '../../redux/store';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const AuthorizationPage = (): JSX.Element => {
@@ -31,14 +31,26 @@ const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promi
 
   return (
     <>
-      <div>AuthorizationPage</div>
-      <div className='signin-form'>
-      <form onSubmit={onHandleSubmit}>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='email' />
-        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='пароль' />
-        <button type='submit'>Войти</button>
-      </form>
+      <div className="signin-form">
+        <form onSubmit={onHandleSubmit}>
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="email"
+          />
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="пароль"
+          />
+          <button type="submit">Войти</button>
+        </form>
       </div>
+      <p>
+        Войдите, либо <Link to="/sign-up">зарегистрируйтесь</Link>
+      </p>
     </>
   );
 };
