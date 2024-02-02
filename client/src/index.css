@@ -11,7 +11,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 #root {
@@ -21,11 +20,11 @@
 
 .App {
   padding: 0;
+  width: 100vh;
 }
 .App-body {
   padding: 2rem;
 }
-
 a {
   font-weight: 500;
   color: #646cff;
