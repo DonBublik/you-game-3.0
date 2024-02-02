@@ -11,15 +11,15 @@ function MainPage(): JSX.Element {
     <div>
       <h2>Main Page</h2>
 
-      <GamePage/>
+      {/* <GamePage/> */}
 
-      <RegistrationPage/>
-      <AuthorizationPage/>
+     <RegistrationPage/>
+      <AuthorizationPage/> 
 
         <p>Если юзера нет то тут будет вход и ссылка на регу, а если есть то
 
         переход в игру
-      </p> */}
+      </p> 
 
     </div>
   );
