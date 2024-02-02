@@ -17,9 +17,15 @@
   padding: 0;
   width: 100vw;
 }
+
 .App-body {
   padding: 2rem;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
 }
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -43,53 +49,84 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  width: 150px;
+  height: 70px;
+  color: #f9f9f9;
+  background-color: #1d1f7c;
+  
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #23259b;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ffffff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
 
 /**/
 .question-container{
   display: flex;
 }
 
-.question-module{
+.question-module {
   position: absolute;
-  background-color: #5a4d4d;
+  background-color: #0e008ae3;
   width: 800px;
   height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.question-module input {
+  background-color: #b3b3e7;
+  font-size: 20px;
+}
+.question-module input::placeholder {
+  color: #727272; 
+  font-style:italic 
+}
+.question-name{
+  margin-top: -200px;
+  font-size: 80px;
 }
 .answer-true {
   color: rgb(3, 219, 3);
   font-size: 100px;
+  margin-bottom: -300px;
 }
 .answer-false {
   color: rgb(214, 0, 0);
   font-size: 100px;
+  margin-bottom: -300px;
+}
+
+.question-btn {
+  
+}
+.theme-name{
+  width: 150px;
+  height: 70px;
+  color: #f9f9f9;
+  background-color: #1d1f7c;
+
+  
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-block;
+    text-align: center;
 }
