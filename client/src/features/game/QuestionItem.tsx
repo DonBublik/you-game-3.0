@@ -8,6 +8,7 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
   const [view,setView]=useState(true)
   const [moduleView, setModuleView] = useState(false)
   const [answer,setAnswer]= useState('')
+  const [answerTrue,setaAswerTrue]= useState(false)
   
   const dispatch = useAppDispatch()
   const  openModule = () => {
@@ -18,7 +19,12 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
 
   const questionModuleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promise<void> => {
     e.preventDefault()
-    const {id, score} = question
+    setaAswerTrue(true)
+    let score = 0
+    if (answer===question.answer) {
+      score = question.score
+    }
+    const {id} = question
     const res = await fetch('/api/answers', {
       method: 'POST',
       headers: {
@@ -31,8 +37,9 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
     })
     const data: {question: Question} = await( res.json())as {question:Question}
     dispatch({type: 'questions/update', payload: data.question})
+    setTimeout(() => setModuleView(false), 7000);
+    setTimeout(() => setAnswer(''), 7000);
     
-    setModuleView(false)
   }
   return (
     <>
@@ -47,13 +54,17 @@ const QuestionItem = ({ question }: { question: Question }): JSX.Element => {
       <div className="question-module">
             <form onSubmit={questionModuleSubmit} >
             {question.text}
-            {answer !=='' && answer !== question.answer &&(
-              <div>Не правильно</div>
+            <input value={answer} onChange={(e)=> setAnswer(e.target.value)} type='text' placeholder="Ваш ответ"/>
+            {answerTrue &&(
+              <>
+              {answer !=='' && answer !== question.answer &&(
+              <div className='answer-false'>Неправильно</div>
             )}
             {answer === question.answer &&(
-              <div>Правильно</div>
+              <div className='answer-true'>Правильно</div>
             )}
-            <input value={answer} onChange={(e)=> setAnswer(e.target.value)} type='text' placeholder="Ваш ответ"/>
+              </>
+            )}
             </form>
         </div>
     )}

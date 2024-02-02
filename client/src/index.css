@@ -85,3 +85,11 @@ button:focus-visible {
   width: 800px;
   height: 600px;
 }
+.answer-true {
+  color: rgb(3, 219, 3);
+  font-size: 100px;
+}
+.answer-false {
+  color: rgb(214, 0, 0);
+  font-size: 100px;
+}
