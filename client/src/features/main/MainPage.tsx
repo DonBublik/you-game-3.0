@@ -1,4 +1,4 @@
-import AuthorizationPage from '../auth/AuthorizationPage';
+import AuthorizationPage from "../auth/AuthorizationPage";
 
 function MainPage(): JSX.Element {
   return (
