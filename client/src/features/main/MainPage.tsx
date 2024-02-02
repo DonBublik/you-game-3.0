@@ -31,7 +31,7 @@ const handleLogout = async (): Promise<void> => {
     <div>
       <h2>Main Page</h2>
 
-      {/* <GamePage/> */}
+      <GamePage/>
 
 
      <RegistrationPage/>

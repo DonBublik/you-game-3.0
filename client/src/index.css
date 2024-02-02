@@ -79,3 +79,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/**/
+.question-container{
+  display: flex;
+}
+
+.question-module{
+  position: absolute;
+  background-color: #5a4d4d;
+  width: 800px;
+  height: 600px;
+}

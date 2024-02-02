@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
             include: Game
         },
     });
-    console.log(themes);
     res.json({ themes });
   } catch ({ message }) {
     res.json({ type: 'get themes', message });

@@ -15,7 +15,7 @@ const GamePage = (): JSX.Element => {
   };
 
   const themes = useSelector((store: RootState) => store.themes.themes);
-  console.log(themes);
+
 
   useEffect(() => {
     loadThemes().catch(console.log);
@@ -24,9 +24,11 @@ const GamePage = (): JSX.Element => {
   return (
     <>
       <div className="game-main">GamePage</div>
+      
       {themes.map((theme) => (
         <ThemeItem key={theme.id} theme={theme} />
       ))}
+      
     </>
   );
 };
