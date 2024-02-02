@@ -26,4 +26,4 @@ export type ThemesState = {
 export type QuestionState = {
   questions: Question[]
 }
-export type Action = { type: 'themes/load'; payload: Theme[] } | { type: 'questions/update'; payload: Question[] }
+export type Action = { type: 'themes/load'; payload: Theme[] } | { type: 'questions/update'; payload: Question }

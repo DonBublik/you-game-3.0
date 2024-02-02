@@ -3,7 +3,8 @@ export type User = {
     img: string;
     name: string;
     email: string;
-    password: string
+    password: string,
+    max_result:number
 }
 
 type AuthState = {

@@ -8,7 +8,6 @@ import { useSelector } from 'react-redux';
 
 const NavBar = (): JSX.Element => {
   const user = useSelector((store: RootState) => store.auth.auth);
-  console.log(user);
   
 
   const dispatch = useAppDispatch();
@@ -26,10 +25,10 @@ const NavBar = (): JSX.Element => {
   return (
     <>
       <ul className="navbar_main">
-        {user && <li>Привет, {user.name}</li>}
+        {user && <li>Привет, {user.name} Ваш текущий счет {user.max_result}</li>}
         <li>
-          <NavLink className={'navlink'} to="/">
-            Главная
+          <NavLink className={'navlink'} to="/game">
+            Игра
           </NavLink>
         </li>
         {!user && <li>

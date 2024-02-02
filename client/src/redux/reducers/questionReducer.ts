@@ -13,7 +13,7 @@ export const questionsReducer = (
     case 'questions/update':
       return {
         ...state,
-        questions: state.questions.map((question)= (question.id === action.payload.id ? action.payload : question)),
+        questions: state.questions.map((question) => (question.id === action.payload.id ? action.payload : question)),
       };
 
     default:

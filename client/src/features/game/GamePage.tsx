@@ -19,7 +19,7 @@ const GamePage = (): JSX.Element => {
 
   useEffect(() => {
     loadThemes().catch(console.log);
-  }, []);
+  }, [themes]);
 
   return (
     <>
