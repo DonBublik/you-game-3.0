@@ -9,7 +9,9 @@ import NavBar from './features/navbar/NavBar';
 import RegistrationPage from './features/auth/RegistrationPage';
 
 function App(): JSX.Element {
+
   const dispatch = useAppDispatch();
+
 
   const checkUser = async (): Promise<void> => {
     const res = await fetch('api/auth/check');

@@ -35,7 +35,7 @@ const onHandleSubmit: React.FormEventHandler<HTMLFormElement> = async (e): Promi
       <div className='signin-form'>
       <form onSubmit={onHandleSubmit}>
         <input value={email} onChange={(e) => setEmail(e.target.value)} type='text' placeholder='email' />
-        <input value={password} onChange={(e) => setPassword(e.target.value)} type='text' placeholder='пароль' />
+        <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='пароль' />
         <button type='submit'>Войти</button>
       </form>
       </div>
